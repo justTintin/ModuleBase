@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.tintin.module.modulebase" >
+    package="com.tintin.module.modulebase">
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme" >
-        <activity android:name="com.tintin.module.activity.BaseActivity" >
+        android:theme="@style/AppTheme">
+        <activity android:name="com.tintin.module.activity.BaseActivity" />
+        <activity android:name="com.tintin.module.activity.CircleTestActivity"></activity>
+        <activity android:name="com.tintin.module.activity.CircleProcessViewActivity">
+
+        </activity>
+        <activity android:name="com.tintin.module.activity.CircleSeekBarUnionActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
