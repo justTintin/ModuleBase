@@ -3,7 +3,7 @@ package com.tintin.module.activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import com.tintin.module.modulebase.R;
+import com.tintin.module.app.R;
 import com.tintin.viewmod.circle.CircleProcessView;
 
 public class CircleProcessViewActivity extends AppCompatActivity

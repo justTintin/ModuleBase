@@ -7,7 +7,7 @@ import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
-import com.tintin.module.modulebase.R;
+import com.tintin.module.app.R;
 import com.tintin.viewmod.circle.CircleSeekBar;
 
 public class CircleSeekBarUnionActivity extends AppCompatActivity {

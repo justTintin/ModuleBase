@@ -5,7 +5,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.tintin.module.modulebase.R;
+
+import com.tintin.module.app.R;
 
 import net.tsz.afinal.FinalActivity;
 import net.tsz.afinal.annotation.view.ViewInject;

@@ -1,1 +1,1 @@
-include ':app', ':networkmodule', ':viewmodule', ':loginmodule', ':datamodule', ':domainmodule'
+include ':app', ':networkmodule', ':viewmodule', ':loginmodule', ':datamodule', ':domainmodule', ':zxinglibrary'
