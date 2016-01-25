@@ -27,7 +27,7 @@ import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 
-import com.tintin.viewmod.sildemenu.CustomViewAbove;
+import com.tintin.module.viewmodule.R;
 
 public class SlidingMenu extends RelativeLayout {
 
@@ -288,7 +288,7 @@ public class SlidingMenu extends RelativeLayout {
 			break;
 		case SLIDING_CONTENT:
 			mActionbarOverlay = actionbarOverlay;
-			// take the above com.example.zxinglibrary.android.view out of
+			// take the above com.tintin.module.zxinglibrary.view out of
 			ViewGroup contentParent = (ViewGroup)activity.findViewById(android.R.id.content);
 			View content = contentParent.getChildAt(0);
 			contentParent.removeView(content);
@@ -511,7 +511,7 @@ public class SlidingMenu extends RelativeLayout {
 	/**
 	 * 根据像素的值来设置下方视图的偏移量
 	 *
-	 * @param i The margin, in pixels, on the right of the screen that the behind com.example.zxinglibrary.android.view scrolls to.
+	 * @param i The margin, in pixels, on the right of the screen that the behind com.tintin.module.zxinglibrary.view scrolls to.
 	 */
 	public void setBehindOffset(int i) {
 		mViewBehind.setWidthOffset(i);
@@ -593,7 +593,7 @@ public class SlidingMenu extends RelativeLayout {
 	 * 设置下方视图的在滚动时的缩放比例
 	 *
 	 * @param f The scale of the parallax scroll (i.e. 1.0f scrolls 1 pixel for every
-	 * 1 pixel that the above com.example.zxinglibrary.android.view scrolls and 0.0f scrolls 0 pixels)
+	 * 1 pixel that the above com.tintin.module.zxinglibrary.view scrolls and 0.0f scrolls 0 pixels)
 	 */
 	public void setBehindScrollScale(float f) {
 		if (f < 0 && f > 1)
@@ -736,9 +736,9 @@ public class SlidingMenu extends RelativeLayout {
 	}
 
 	/**
-	 * Sets the selected com.example.zxinglibrary.android.view. The selector will be drawn here
+	 * Sets the selected com.tintin.module.zxinglibrary.view. The selector will be drawn here
 	 *
-	 * @param v the new selected com.example.zxinglibrary.android.view
+	 * @param v the new selected com.tintin.module.zxinglibrary.view
 	 */
 	public void setSelectedView(View v) {
 		mViewBehind.setSelectedView(v);
@@ -833,7 +833,7 @@ public class SlidingMenu extends RelativeLayout {
 		}
 
 		/* (non-Javadoc)
-		 * @see android.com.example.zxinglibrary.android.view.AbsSavedState#writeToParcel(android.os.Parcel, int)
+		 * @see android.com.tintin.module.zxinglibrary.view.AbsSavedState#writeToParcel(android.os.Parcel, int)
 		 */
 		public void writeToParcel(Parcel out, int flags) {
 			super.writeToParcel(out, flags);
@@ -853,7 +853,7 @@ public class SlidingMenu extends RelativeLayout {
 	}
 
 	/* (non-Javadoc)
-	 * @see android.com.example.zxinglibrary.android.view.View#onSaveInstanceState()
+	 * @see android.com.tintin.module.zxinglibrary.view.View#onSaveInstanceState()
 	 */
 	@Override
 	protected Parcelable onSaveInstanceState() {
@@ -863,7 +863,7 @@ public class SlidingMenu extends RelativeLayout {
 	}
 
 	/* (non-Javadoc)
-	 * @see android.com.example.zxinglibrary.android.view.View#onRestoreInstanceState(android.os.Parcelable)
+	 * @see android.com.tintin.module.zxinglibrary.view.View#onRestoreInstanceState(android.os.Parcelable)
 	 */
 	@Override
 	protected void onRestoreInstanceState(Parcelable state) {
@@ -873,7 +873,7 @@ public class SlidingMenu extends RelativeLayout {
 	}
 
 	/* (non-Javadoc)
-	 * @see android.com.example.zxinglibrary.android.view.ViewGroup#fitSystemWindows(android.graphics.Rect)
+	 * @see android.com.tintin.module.zxinglibrary.view.ViewGroup#fitSystemWindows(android.graphics.Rect)
 	 */
 	@SuppressLint("NewApi")
 	@Override

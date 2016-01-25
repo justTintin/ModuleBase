@@ -3,12 +3,10 @@ package com.tintin.viewmod.sildemenu;
 import android.graphics.Canvas;
 import android.view.animation.Interpolator;
 
-import com.tintin.viewmod.sildemenu.SlidingMenu.CanvasTransformer;
-
 public class CanvasTransformerBuilder
 {
 
-    private CanvasTransformer mTrans;
+    private SlidingMenu.CanvasTransformer mTrans;
 
     private static Interpolator lin = new Interpolator()
     {
@@ -21,7 +19,7 @@ public class CanvasTransformerBuilder
     private void initTransformer()
     {
         if (mTrans == null)
-            mTrans = new CanvasTransformer()
+            mTrans = new SlidingMenu.CanvasTransformer()
             {
                 public void transformCanvas(Canvas canvas, float percentOpen)
                 {
@@ -90,7 +88,7 @@ public class CanvasTransformerBuilder
             final Interpolator interp)
     {
         initTransformer();
-        mTrans = new CanvasTransformer()
+        mTrans = new SlidingMenu.CanvasTransformer()
         {
             public void transformCanvas(Canvas canvas, float percentOpen)
             {
@@ -103,10 +101,10 @@ public class CanvasTransformerBuilder
         return mTrans;
     }
 
-    public CanvasTransformer concatTransformer(final CanvasTransformer t)
+    public SlidingMenu.CanvasTransformer concatTransformer(final SlidingMenu.CanvasTransformer t)
     {
         initTransformer();
-        mTrans = new CanvasTransformer()
+        mTrans = new SlidingMenu.CanvasTransformer()
         {
             public void transformCanvas(Canvas canvas, float percentOpen)
             {

@@ -2,7 +2,7 @@ package com.tintin.viewmod.sildemenu;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import android.support.v4.view.*;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Rect;
@@ -19,9 +19,6 @@ import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 import android.view.animation.Interpolator;
 import android.widget.Scroller;
-
-import com.tintin.viewmod.sildemenu.SlidingMenu.OnClosedListener;
-import com.tintin.viewmod.sildemenu.SlidingMenu.OnOpenedListener;
 
 public class CustomViewAbove extends ViewGroup
 {
@@ -119,10 +116,10 @@ public class CustomViewAbove extends ViewGroup
     private OnPageChangeListener mInternalPageChangeListener;
 
     //关闭监听器
-    private OnClosedListener mClosedListener;
+    private SlidingMenu.OnClosedListener mClosedListener;
 
     //打开监听器
-    private OnOpenedListener mOpenedListener;
+    private SlidingMenu.OnOpenedListener mOpenedListener;
 
     //存放被忽略的视图组件列表
     private List<View> mIgnoredViews = new ArrayList<View>();
@@ -326,7 +323,7 @@ public class CustomViewAbove extends ViewGroup
     /**
      * 设置打开监听事件
      */
-    public void setOnOpenedListener(OnOpenedListener l)
+    public void setOnOpenedListener(SlidingMenu.OnOpenedListener l)
     {
         mOpenedListener = l;
     }
@@ -334,7 +331,7 @@ public class CustomViewAbove extends ViewGroup
     /**
      * 设置关闭监听事件
      */
-    public void setOnClosedListener(OnClosedListener l)
+    public void setOnClosedListener(SlidingMenu.OnClosedListener l)
     {
         mClosedListener = l;
     }
@@ -737,7 +734,7 @@ public class CustomViewAbove extends ViewGroup
 
         if (needPopulate)
         {
-            // Done with scroll, no longer want to cache com.example.zxinglibrary.android.view drawing.
+            // Done with scroll, no longer want to cache com.tintin.module.zxinglibrary.view drawing.
             setScrollingCacheEnabled(false);
             //终止动画效果
             mScroller.abortAnimation();
@@ -1212,7 +1209,7 @@ public class CustomViewAbove extends ViewGroup
      * Tests scrollability within child views of v given a delta of dx.
      *
      * @param v View to test for horizontal scrollability
-     * @param checkV Whether the com.example.zxinglibrary.android.view v passed should itself be checked for scrollability (true),
+     * @param checkV Whether the com.tintin.module.zxinglibrary.view v passed should itself be checked for scrollability (true),
      *               or just its children (false).
      * @param dx Delta scrolled in pixels
      * @param x X coordinate of the active touch point
@@ -1252,7 +1249,7 @@ public class CustomViewAbove extends ViewGroup
     @Override
     public boolean dispatchKeyEvent(KeyEvent event)
     {
-        // Let the focused com.example.zxinglibrary.android.view and/or our descendants get the key first
+        // Let the focused com.tintin.module.zxinglibrary.view and/or our descendants get the key first
         return super.dispatchKeyEvent(event) || executeKeyEvent(event);
     }
 
