@@ -14,8 +14,6 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.alipay.sdk.app.PayTask;
-import com.doron.duoduo.library.utils.L;
-import com.doron.xueche.stu.out.JSOut;
 
 public class PayController
 {
@@ -24,22 +22,22 @@ public class PayController
     private static PayController instance;
 
     // 商户PID
-    //    public static final String PARTNER = "2088911049798088";
+    //    public static final String PARTNER = "xxxxxxxxxxx";
 
     // 商户收款账号
-    //    public static final String SELLER = "syswsjx@163.com";
+    //    public static final String SELLER = "xxxx@163.com";
 
     //商户网站
     //    private static final String notifyUrl = "http://218.2.190.122:18080/isw/portal/alipay/notify.do";
 
     // 商户私钥，pkcs8格式
-    public static final String RSA_PRIVATE = "MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBANwXot4o1/lHuC9fGbwp2Z4BbM5thONi1ojzcsuMzQLDOawzH4KAT/aMZYl/19OeWGdiWxLMLajQ0PIgHcpVlIP6/0ZqbDrIh9S0AVDAwbWTGufoUM7UMBNCUmU2TnklKqMBcN+kSrRU8ZYmKdjKHgh3paHuYC6G5AtMN12Jm8lTAgMBAAECgYBj75+WfLlEiZpKeEY5OE+F/WOof/Y9QZ3kZZaUcoSMYpUHadc+7IBilPFt88zOXDIMD48HBAsfgmG973NXcnCSfY7dBp6Qc4QzVonJOaFaooWGM7nFlOm7kEiY9tNRHWTjEgWqGeeQEqh/3rHY8pv4b7hv+T4nOKCb4u3KVuwfUQJBAO6Vt5Pwfsfg8txKSRLQeFJ022SeOztLwHRbvkESvoX1UEgyOu2CoTLh3ul3CSBm40lvAetBUGQ7d3lnZ/KZr8UCQQDsKFyIlJ8YwEmM/8s94NKu2SSS+eqVBsyRQuD6zjMWoaCjqakJSNuXiQtK7gkS2Z2wsSo59AoSR8ZtwBFadU43AkEA3UVTbcw0+NFiy/XFUcKwZODl/KpXisXVptTTXWyx8HE0VNDpIA/vys36vBHfEAL8NsXSRMpdcahJRPonSLNKdQJAIbA8SwuQipJbq66Nyrz4sRKu4fye1zWKFyrIN18U8KSL6uz3/SgUk1BsePrt9m9uzFbppCzJBwSQLPXaQ+I6DwJAa/gLNTr1nQhIUd9yxydnnwVUvK0XYymo3D8ZkMv2e3Qxg3q1Nz/L1P4JQdmQ7AMMJWWi8h8vKvNNfgsd6kfTqQ==";
+    public static final String RSA_PRIVATE = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
 
     public static final int SDK_PAY_FLAG = 20001;
 
     public static final int SDK_CHECK_FLAG = 20002;
 
-    private JSOut mJsOut;
+    private PayMentInfo mPayMentInfo;
 
     private static Activity mActivity;
 
@@ -86,21 +84,21 @@ public class PayController
      * call alipay sdk reqPay. 调用SDK支付
      *
      */
-    public void reqAliPay(JSOut jsOut)
+    public void reqAliPay(PayMentInfo payMentInfo)
 
     {
-        mJsOut = jsOut;
+        mPayMentInfo = payMentInfo;
 
-        if (TextUtils.isEmpty(jsOut.getProductDescription()))
+        if (TextUtils.isEmpty(payMentInfo.getProductDescription()))
         {
-            jsOut.setProductDescription("学车费用");
+            payMentInfo.setProductDescription("学车费用");
         }
-        mJsOut.setAliPayPrivateKey(RSA_PRIVATE);
+        mPayMentInfo.setAliPayPrivateKey(RSA_PRIVATE);
 
-        L.d(TAG, "pay" + mJsOut.toString());
-        if (TextUtils.isEmpty(mJsOut.getAliPayPartner())
-                || TextUtils.isEmpty(mJsOut.getAliPayPrivateKey())
-                || TextUtils.isEmpty(mJsOut.getAliPaySeller()))
+        Log.d(TAG, "pay" + mPayMentInfo.toString());
+        if (TextUtils.isEmpty(mPayMentInfo.getAliPayPartner())
+                || TextUtils.isEmpty(mPayMentInfo.getAliPayPrivateKey())
+                || TextUtils.isEmpty(mPayMentInfo.getAliPaySeller()))
         {
             new AlertDialog.Builder(mActivity).setTitle("警告")
                     .setMessage("需要配置PARTNER | RSA_PRIVATE| SELLER")
@@ -117,7 +115,7 @@ public class PayController
             return;
         }
         // 订单
-        String orderInfo = getOrderInfo(jsOut);
+        String orderInfo = getOrderInfo(payMentInfo);
 
         // 对订单做RSA 签名
         String sign = sign(orderInfo);
@@ -203,30 +201,33 @@ public class PayController
      * create the order info. 创建订单信息
      *
      */
-    private String getOrderInfo(JSOut jsOut)
+    private String getOrderInfo(PayMentInfo payMentInfo)
     {
 
-        String tradeNo = jsOut.getTradeNO();
+        String tradeNo = payMentInfo.getTradeNO();
         // 签约合作者身份ID
-        String orderInfo = "partner=" + "\"" + jsOut.getAliPayPartner() + "\"";
+        String orderInfo = "partner=" + "\"" + payMentInfo.getAliPayPartner()
+                + "\"";
 
         // 签约卖家支付宝账号
-        orderInfo += "&seller_id=" + "\"" + jsOut.getAliPaySeller() + "\"";
+        orderInfo += "&seller_id=" + "\"" + payMentInfo.getAliPaySeller()
+                + "\"";
 
         // 商户网站唯一订单号
-        orderInfo += "&out_trade_no=" + "\"" + jsOut.getTradeNO() + "\"";
+        orderInfo += "&out_trade_no=" + "\"" + payMentInfo.getTradeNO() + "\"";
 
         // 商品名称
-        orderInfo += "&subject=" + "\"" + jsOut.getProductName() + "\"";
+        orderInfo += "&subject=" + "\"" + payMentInfo.getProductName() + "\"";
 
         // 商品详情
-        orderInfo += "&body=" + "\"" + jsOut.getProductDescription() + "\"";
+        orderInfo += "&body=" + "\"" + payMentInfo.getProductDescription()
+                + "\"";
 
         // 商品金额
-        orderInfo += "&total_fee=" + "\"" + jsOut.getAmount() + "\"";
+        orderInfo += "&total_fee=" + "\"" + payMentInfo.getAmount() + "\"";
 
         // 服务器异步通知页面路径
-        orderInfo += "&notify_url=" + "\"" + jsOut.getNotifyURL() + "\"";
+        orderInfo += "&notify_url=" + "\"" + payMentInfo.getNotifyURL() + "\"";
 
         // 服务接口名称， 固定值
         orderInfo += "&service=\"mobile.securitypay.pay\"";
@@ -265,7 +266,7 @@ public class PayController
      */
     public String sign(String content)
     {
-        return SignUtils.sign(content, mJsOut.getAliPayPrivateKey());
+        return SignUtils.sign(content, mPayMentInfo.getAliPayPrivateKey());
     }
 
     /**
