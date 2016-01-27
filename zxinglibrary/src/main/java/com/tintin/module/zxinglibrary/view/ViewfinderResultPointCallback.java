@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.doron.duoduo.library.zxing.view;
+package com.tintin.module.zxinglibrary.view;
 
 import com.google.zxing.ResultPoint;
 import com.google.zxing.ResultPointCallback;

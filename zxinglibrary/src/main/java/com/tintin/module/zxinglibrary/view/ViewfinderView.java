@@ -14,7 +14,7 @@
  * limitations under the License. 
  */
 
-package com.doron.duoduo.library.zxing.view;
+package com.tintin.module.zxinglibrary.view;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -28,9 +28,10 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.util.AttributeSet;
 import android.view.View;
-import com.doron.duoduo.library.R;
-import com.tintin.module.zxinglibrary.camera.CameraManager;
+
 import com.google.zxing.ResultPoint;
+import com.tintin.module.zxinglibrary.R;
+import com.tintin.module.zxinglibrary.camera.CameraManager;
 
 /** 
  * This com.tintin.module.zxinglibrary.view is overlaid on top of the camera preview. It adds the viewfinder
