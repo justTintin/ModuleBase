@@ -2,9 +2,11 @@ package com.tintin.viewmod.dialog;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
 
@@ -35,6 +37,16 @@ public abstract class BaseDialog extends Dialog
      * DIALOG_TYPE_INSIDE
      */
     public static final int DIALOG_TYPE_CUSTOM = 3;
+
+    /**
+     * DIALOG_TYPE_TOP
+     */
+    public static final int DIALOG_TYPE_TOP = 4;
+
+    /**
+     * DIALOG_TYPE_BOTTOM
+     */
+    public static final int DIALOG_TYPE_BOTTOM = 5;
 
     private View mContainer;
 
@@ -104,10 +116,47 @@ public abstract class BaseDialog extends Dialog
                 setContentView(mContainer, lp);
             }
             break;
+            case DIALOG_TYPE_BOTTOM:
+            {
+                setContentView(mContainer);
+                Window window = this.getWindow();
+                WindowManager.LayoutParams lp = window.getAttributes();
+                window.setGravity(Gravity.BOTTOM);
+                //                lp.x = 100; // 新位置X坐标
+                //                lp.y = 100; // 新位置Y坐标
+                lp.width = mWidth; // 宽度
+                lp.height = (int) (mHeight * 0.5); // 高度
+                lp.alpha = 0.7f; // 透明度
+
+                // 当Window的Attributes改变时系统会调用此函数,可以直接调用以应用上面对窗口参数的更改,也可以用setAttributes
+                // dialog.onWindowAttributesChanged(lp);
+                window.setAttributes(lp);
+
+            }
+            break;
+            case DIALOG_TYPE_TOP:
+            {
+                setContentView(mContainer);
+                Window window = this.getWindow();
+                WindowManager.LayoutParams lp = window.getAttributes();
+                window.setGravity(Gravity.TOP);
+                //                lp.x = 100; // 新位置X坐标
+                //                lp.y = 100; // 新位置Y坐标
+                lp.width = mWidth; // 宽度
+                lp.height = (int) (mHeight * 0.5); // 高度
+                lp.alpha = 0.7f; // 透明度
+
+                // 当Window的Attributes改变时系统会调用此函数,可以直接调用以应用上面对窗口参数的更改,也可以用setAttributes
+                // dialog.onWindowAttributesChanged(lp);
+                window.setAttributes(lp);
+
+            }
+            break;
             default:
             {
                 FrameLayout.LayoutParams lp = new FrameLayout.LayoutParams(
-                        (int) (mWidth * 0.8), ViewGroup.LayoutParams.WRAP_CONTENT);
+                        (int) (mWidth * 0.8),
+                        ViewGroup.LayoutParams.WRAP_CONTENT);
                 setContentView(mContainer, lp);
             }
             break;
