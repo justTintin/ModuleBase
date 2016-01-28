@@ -14,8 +14,9 @@ import android.os.Environment;
 import android.os.StatFs;
 import android.provider.MediaStore;
 
-import com.doron.duoduo.library.R;
+
 import com.tintin.module.util.T;
+import com.tintin.module.utilmodule.R;
 
 /**
  * SD卡相关的辅助类
