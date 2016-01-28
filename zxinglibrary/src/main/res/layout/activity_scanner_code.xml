@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <!-- 存放扫描区域代码 -->
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- 存放预览界面:摄像头打开可获取这块界面 -->
+
+        <SurfaceView
+            android:id="@+id/preview_view"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+
+        <!-- 存放扫描窗口界面 -->
+
+        <com.doron.xueche.library.zxing.view.ViewfinderView
+            android:id="@+id/view_finder"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+        <!-- 标题栏:logo -->
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="bottom">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/iv_open_light"
+                    android:layout_centerInParent="true"
+                    android:text="@string/scan_info"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:visibility="invisible" />
+
+                <ImageView
+                    android:id="@+id/iv_open_light"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginBottom="20dp"
+                    android:contentDescription="@string/app_name"
+                    android:src="@mipmap/torch_on" />
+
+            </RelativeLayout>
+
+
+        </FrameLayout>
+    </FrameLayout>
+</LinearLayout>
