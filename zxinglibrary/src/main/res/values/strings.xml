@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">ZXingLibrary</string>
+    <string name="toast_info">将二维码放入取景框中即可自动扫描</string>
+    <string name="msg_no_sdcard">没有检测到外部扩展卡,头像、图片和录音均不可以.</string>
+    <string name="msg_send_nophoto_prompt">无法拍照,请检查拍照程序</string>
 </resources>

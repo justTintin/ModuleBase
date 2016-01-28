@@ -9,7 +9,7 @@ import android.os.Looper;
 import android.os.Message;
 import android.text.TextUtils;
 
-import com.doron.duoduo.library.db.DBMsgObject.*;
+import com.tintin.datamod.database.DBMsgObject.*;
 
 public class DataBaseHandler extends Handler
 {

@@ -1,1 +1,1 @@
-include ':app', ':networkmodule', ':viewmodule', ':loginmodule', ':datamodule', ':domainmodule', ':zxinglibrary', ':sharesdklibrary', ':utilmodule'
+include ':app', ':networkmodule', ':viewmodule', ':loginmodule', ':datamodule', ':domainmodule', ':zxinglibrary', ':sharesdklibrary', ':utilmodule', ':paymodule'

@@ -1,0 +1,13 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <!-- 存在于ViewfinderView类中的一个参数值,此参数是扫描框下面的文字居左的一个单位-->
+    <dimen name="view_viewfindview_msg_margin_left">25dip</dimen>
+    <dimen name="radio_button_conner_radius">5dp</dimen>
+    <dimen name="radio_button_stroke_border">1dp</dimen>
+    <dimen name="def_wheel_width">32dp</dimen>
+    <dimen name="def_shadow_radius">2dp</dimen>
+    <dimen name="def_shadow_offset">2dp</dimen>
+</resources>
