@@ -3,7 +3,9 @@ package com.tintin.module.util.device;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.PowerManager;
 import android.telephony.TelephonyManager;
+import android.widget.Toast;
 
 /*
 * [设备相关工具类 ]
@@ -13,6 +15,8 @@ import android.telephony.TelephonyManager;
 */
 public class DeviceUtils
 {
+
+    private static PowerManager.WakeLock sWakeLock;
 
     /**
      * 获取机器的id
@@ -86,7 +90,12 @@ public class DeviceUtils
         }
     }
 
-    public static void phoneCall(Context context,String phnum)
+    /**
+     * 打电话功能，需要权限
+     * @param context
+     * @param phnum
+     */
+    public static void phoneCall(Context context, String phnum)
     {
         Intent intent = new Intent();
         intent.setAction("android.intent.action.DIAL");
@@ -94,4 +103,100 @@ public class DeviceUtils
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
     }
+
+    /**
+     * [判断是否为移动号码]<BR>
+     * @param phoneNum 传入的手机号码
+     * @return 是否是移动的手机号
+     */
+    private static boolean isChinaMobileNum(String phoneNum)
+    {
+        if (phoneNum.matches("((134|135|136|137|138|139|147|150|151|152|157|158|159|182|187|188)[0-9])[0-9]{7}"))
+        {
+            return true;
+        }
+        else
+        {
+            return isPrefixNumber(phoneNum);
+        }
+    }
+
+    private static boolean isPrefixNumber(String prefixNumber)
+    {
+        if (prefixNumber.startsWith("+86") || prefixNumber.startsWith("086"))
+        {
+            return isChinaMobileNum(prefixNumber.substring(3));
+        }
+        else if (prefixNumber.startsWith("12593")
+                || prefixNumber.startsWith("12520"))
+        {
+            return isChinaMobileNum(prefixNumber.substring(5));
+        }
+        else if (prefixNumber.startsWith("086"))
+        {
+            return isChinaMobileNum(prefixNumber.substring(3));
+        }
+        else if (prefixNumber.startsWith("0"))
+        {
+            return isChinaMobileNum(prefixNumber.substring(1));
+        }
+        return false;
+    }
+
+    /**
+     * 保持屏幕唤醒
+     * @param context 上下文
+     */
+    public static void acquireWakeLock(Context context)
+    {
+        if (sWakeLock == null)
+        {
+            PowerManager pm = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
+            sWakeLock = pm.newWakeLock(PowerManager.SCREEN_DIM_WAKE_LOCK,
+                    context.getClass().getCanonicalName());
+            sWakeLock.acquire();
+        }
+    }
+
+    /**
+     * 解除屏幕唤醒 <BR>
+     */
+    public static void releaseWakeLock()
+    {
+        if (sWakeLock != null && sWakeLock.isHeld())
+        {
+            sWakeLock.release();
+            sWakeLock = null;
+        }
+    }
+
+    private static long lastClickTime;
+
+    private static long lastShowTime;
+
+    public static boolean isFastDoubleClick()
+    {
+        long time = System.currentTimeMillis();
+        long timeD = time - lastClickTime;
+        if (0 < timeD && timeD < 800)
+        {
+            return true;
+        }
+        lastClickTime = time;
+        return false;
+    }
+
+    public static void notFastShow(Context context)
+    {
+        long time = System.currentTimeMillis();
+        long timeD = time - lastShowTime;
+        if (timeD > 8000)
+        {
+            Toast.makeText(context, "click too fast ", Toast.LENGTH_SHORT)
+                    .show();
+        }
+        lastShowTime = time;
+
+    }
+
 }

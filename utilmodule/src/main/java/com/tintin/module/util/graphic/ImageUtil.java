@@ -238,9 +238,10 @@ public class ImageUtil
         return tempBitmapBig;
 
     }
-    public static String savePic(Context context, int resId)
+
+    public static String savePic(Context context, String filename, int resId)
     {
-        String path = "/sdcard/logo_doron_stu.png";
+        String path = "/sdcard/" + filename + ".png";
         File pic = new File(path);
         if (!pic.exists())
         {
