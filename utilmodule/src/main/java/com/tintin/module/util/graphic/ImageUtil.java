@@ -10,11 +10,16 @@
 package com.tintin.module.util.graphic;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
 import android.app.Activity;
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
@@ -232,6 +237,45 @@ public class ImageUtil
 
         return tempBitmapBig;
 
+    }
+
+    public static String savePic(Context context, String filename, int resId)
+    {
+        String path = "/sdcard/" + filename + ".png";
+        File pic = new File(path);
+        if (!pic.exists())
+        {
+            try
+            {
+                // 把资源文件转成bitmap
+                Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(),
+                        resId);
+
+                // 再转成字节数组
+                ByteArrayOutputStream out = new ByteArrayOutputStream();
+                int i = 100;
+                bitmap.compress(Bitmap.CompressFormat.PNG, i, out);
+                byte[] array = out.toByteArray();
+
+                // 最后通过流在保存
+                FileOutputStream fos = new FileOutputStream(pic);
+                fos.write(array);
+                fos.close();
+
+            }
+            catch (FileNotFoundException e)
+            {
+                // TODO: handle exception
+                e.printStackTrace();
+            }
+            catch (IOException e)
+            {
+                e.printStackTrace();
+
+            }
+
+        }
+        return path;
     }
 
 }
