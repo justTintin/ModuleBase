@@ -14,9 +14,7 @@ import android.os.Environment;
 import android.os.StatFs;
 import android.provider.MediaStore;
 
-
-import com.tintin.module.util.T;
-import com.tintin.module.utilmodule.R;
+import com.tintin.module.util.ToastUtil;
 
 /**
  * SD卡相关的辅助类
@@ -25,23 +23,27 @@ public class SDCardUtils
 {
     private SDCardUtils()
     {
-		/* cannot be instantiated */
+        /* cannot be instantiated */
         throw new UnsupportedOperationException("cannot be instantiated");
     }
+
     /**
      * 保存文件
      * @param fileName 文件名称
      * @param content  文件内容
      * @throws IOException
      */
-    public static void saveToSDCard(String fileName, String content) throws IOException {
+    public static void saveToSDCard(String fileName, String content)
+            throws IOException
+    {
         //File file = new File(new File("/mnt/sdcard"),fileName);
         //考虑不同版本的sdCard目录不同，采用系统提供的API获取SD卡的目录
-        File file = new File(SDCardUtils.getSDCardPath(),fileName);
+        File file = new File(SDCardUtils.getSDCardPath(), fileName);
         FileOutputStream fileOutputStream = new FileOutputStream(file);
         fileOutputStream.write(content.getBytes());
         fileOutputStream.close();
     }
+
     /**
      * 判断SDCard是否可用
      *
@@ -50,7 +52,8 @@ public class SDCardUtils
     public static boolean isSDCardEnable()
     {
         String state = Environment.getExternalStorageState();
-        return state.equals(Environment.MEDIA_MOUNTED) || Environment.MEDIA_MOUNTED_READ_ONLY.equals(state);
+        return state.equals(Environment.MEDIA_MOUNTED)
+                || Environment.MEDIA_MOUNTED_READ_ONLY.equals(state);
 
     }
 
@@ -96,7 +99,8 @@ public class SDCardUtils
         if (filePath.startsWith(getSDCardPath()))
         {
             filePath = getSDCardPath();
-        } else
+        }
+        else
         {// 如果是内部存储的路径，则获取内存存储的可用容量
             filePath = Environment.getDataDirectory().getAbsolutePath();
         }
@@ -115,14 +119,17 @@ public class SDCardUtils
         return Environment.getRootDirectory().getAbsolutePath();
     }
 
-    public static void selectSystemPhone(final int photoCode, Activity activity) {
+    public static void selectSystemPhone(final int photoCode, Activity activity)
+    {
 
-        if (!isSDCardEnable()) {
-            T.show(activity, activity.getResources().getString(R.string.msg_no_sdcard),0);
+        if (!isSDCardEnable())
+        {
+            ToastUtil.show(activity, "没有SD卡", 0);
             return;
         }
         Intent intent = new Intent(Intent.ACTION_PICK, null);
-        intent.setDataAndType(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, "image/*");
+        intent.setDataAndType(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
+                "image/*");
         activity.startActivityForResult(intent, photoCode);
     }
 }

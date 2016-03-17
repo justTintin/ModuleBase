@@ -1,7 +1,7 @@
-package com.tintin.module.util.data;
+package com.tintin.module.util.app;
 
 /*
-* [栈的管理]
+* [堆栈管理]
 * [功能详细描述]
 * @author Administrator
 * @version [DoronApp, 2016/2/24] 
@@ -13,9 +13,21 @@ import java.util.Stack;
 import android.app.Activity;
 import android.util.Log;
 
-public class ScreenManager
+public class StackManager
 {
-    private static final String TAG = ScreenManager.class.getSimpleName();
+    private static final String TAG = StackManager.class.getSimpleName();
+
+    public static int getFragmentId()
+    {
+        return fragmentId;
+    }
+
+    public static void setFragmentId(int fragmentId)
+    {
+        StackManager.fragmentId = fragmentId;
+    }
+
+    private static int fragmentId;
 
     public static Stack<Activity> getActivityStack()
     {
@@ -24,14 +36,18 @@ public class ScreenManager
 
     public static Stack<Activity> getActivityStackReverse()
     {
-        Stack<Activity> activityStackTemp = activityStack;
+        Stack<Activity> activityStackTemp = new Stack<>();
+        for (int i = 0; i < activityStack.size(); i++)
+        {
+            activityStackTemp.add(activityStack.get(i));
+        }
         Collections.reverse(activityStackTemp);
         return activityStackTemp;
     }
 
-    private static Stack<Activity> activityStack;
+    private static Stack<Activity> activityStack = new Stack<Activity>();
 
-    private static ScreenManager instance;
+    private static StackManager instance;
 
     /**
      * <单例方法>
@@ -39,11 +55,11 @@ public class ScreenManager
      * @return 该对象的实例
      * @see [类、类#方法、类#成员]
      */
-    public static ScreenManager getScreenManager()
+    public static StackManager getScreenManager()
     {
         if (instance == null)
         {
-            instance = new ScreenManager();
+            instance = new StackManager();
         }
         return instance;
     }
@@ -61,9 +77,9 @@ public class ScreenManager
             return null;
         }
         Activity activity = activityStack.lastElement();
-
-        Log.e(TAG, "get current activity:"
-                + activity.getClass().getSimpleName());
+        //
+        //        Log.e(TAG, "get current activity:"
+        //                + activity.getClass().getSimpleName());
         return activity;
     }
 
@@ -75,12 +91,36 @@ public class ScreenManager
      */
     public void pushActivity(Activity activity)
     {
-        if (activityStack == null)
+        try
         {
-            activityStack = new Stack<Activity>();
+            if (activityStack == null)
+            {
+                activityStack = new Stack<Activity>();
+            }
+
+            for (int i = activityStack.size() - 1; i > 0; i--)
+            {
+                if (activity.equals(activityStack.get(i)))
+                {
+                    activityStack.remove(activityStack.get(i));
+                }
+            }
+
+            activityStack.add(activity);
+            Log.e(TAG, "push stack activity:" + activity.toString());
+            int i = 0;
+            for (Activity activity1 : activityStack)
+            {
+                Log.e(TAG, "i==" + i + activity1.toString());
+                i++;
+            }
         }
-        Log.e(TAG, "push stack activity:" + activity.getClass().getSimpleName());
-        activityStack.add(activity);
+        catch (Exception e)
+        {
+            e.printStackTrace();
+
+        }
+
     }
 
     /**
@@ -123,5 +163,23 @@ public class ScreenManager
 
             popActivity(activity);
         }
+    }
+
+    /**
+     * <删除栈中Activity>
+     * <功能详细描述>
+     * @see [类、类#方法、类#成员]
+     */
+    public void removeActivity(Activity activity)
+    {
+
+        for (int i = activityStack.size() - 1; i > 0; i--)
+        {
+            if (activity.equals(activityStack.get(i)))
+            {
+                activityStack.remove(activityStack.get(i));
+            }
+        }
+
     }
 }

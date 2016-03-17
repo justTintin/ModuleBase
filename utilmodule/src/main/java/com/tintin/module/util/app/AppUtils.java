@@ -14,11 +14,6 @@ import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.net.Uri;
 import android.util.Log;
-import android.webkit.CookieManager;
-import android.webkit.CookieSyncManager;
-import android.webkit.WebView;
-
-import com.tintin.module.util.L;
 
 /**
  * 跟App相关的辅助类
@@ -193,76 +188,6 @@ public class AppUtils
         return info;
     }
 
-    /**
-     * 清除cookie
-     * @param context
-     */
-    private static void clearCookie(Context context)
-    {
 
-        //清空所有Cookie
-        CookieSyncManager.createInstance(context); //Create a singleton CookieSyncManager within a context
-        CookieManager cookieManager = CookieManager.getInstance(); // the singleton CookieManager instance
-        cookieManager.removeAllCookie();// Removes all cookies.
-        CookieSyncManager.getInstance().sync(); // forces sync manager to sync now
-
-    }
-
-    /**
-     * 清除webview缓存
-     * @param webView
-     */
-    public static void clearWebViewCache(WebView webView)
-    {
-        webView.setWebChromeClient(null);
-        webView.setWebViewClient(null);
-        webView.getSettings().setJavaScriptEnabled(false);
-        webView.clearCache(true);
-    }
-
-    /**
-     * 根据删除文件的方法来删除
-     * @param dir
-     * @param numDays
-     * @return
-     */
-    public static int clearCacheFolderAll(Context context,File dir, long numDays)
-    {
-        int deletedFiles = 0;
-        if (dir != null && dir.isDirectory())
-        {
-            clearCookie(context);
-            try
-            {
-                for (File child : dir.listFiles())
-                {
-                    L.i(TAG, "child==========" + child.getName());
-                    if (child.isDirectory())
-                    {
-                        deletedFiles += clearCacheFolderAll(context,child, numDays);
-                    }
-                    if (child.lastModified() < numDays)
-                    {
-                        if (child.delete())
-                        {
-                            deletedFiles++;
-                        }
-                    }
-                }
-            }
-            catch (Exception e)
-            {
-
-                e.printStackTrace();
-            }
-
-        }
-        else
-        {
-            L.d(TAG, "dir is null");
-        }
-        return deletedFiles;
-
-    }
 
 }
