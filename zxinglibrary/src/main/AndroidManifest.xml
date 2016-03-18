@@ -10,7 +10,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true">
         <activity
-            android:name="com.tintin.module.zxingactivity.ScanTwoDimenCodeActivity"
+            android:name="com.tintin.module.zxingactivity.ScanQRCodeActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
 

@@ -29,7 +29,7 @@ import android.graphics.drawable.StateListDrawable;
 import android.util.Base64;
 import android.util.DisplayMetrics;
 
-import com.tintin.module.util.L;
+import com.tintin.module.util.Logger;
 
 /**
  * [图处转码工具类]<BR>
@@ -169,7 +169,7 @@ public class ImageUtil
         {
             rate = base * 70 / 100;
         }
-        L.d(TAG, widthPixels + "==rate==" + rate);
+        Logger.d(TAG, widthPixels + "==rate==" + rate);
         return rate;
     }
 
@@ -200,7 +200,7 @@ public class ImageUtil
         {
             pad = 3;
         }
-        L.d(TAG, widthPixels + "==pad==" + pad);
+        Logger.d(TAG, widthPixels + "==pad==" + pad);
         return pad;
     }
 

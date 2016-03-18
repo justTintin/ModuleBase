@@ -34,7 +34,7 @@ import android.util.Base64;
         SecretKey secretKey = keyFactory.generateSecret(desKeySpec);
         IvParameterSpec iv = new IvParameterSpec(key.getBytes("UTF-8"));
         cipher.init(Cipher.ENCRYPT_MODE, secretKey, iv);
-//        L.i("jiami token:" + URLEncoder.encode(encodeBase64(cipher.doFinal(message.getBytes("UTF-8"))).trim(),
+//        Logger.i("jiami token:" + URLEncoder.encode(encodeBase64(cipher.doFinal(message.getBytes("UTF-8"))).trim(),
 //                "UTF-8"));
         return encodeBase64(cipher.doFinal(message.getBytes("UTF-8"))).trim();
     }

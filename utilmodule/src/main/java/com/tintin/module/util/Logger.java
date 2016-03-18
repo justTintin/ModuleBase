@@ -12,10 +12,10 @@ import android.util.Log;
  *
  *
  */
-public class L
+public class Logger
 {
 
-    private L()
+    private Logger()
     {
         /* cannot be instantiated */
         throw new UnsupportedOperationException("cannot be instantiated");
