@@ -112,4 +112,21 @@ public class CommonDownloadTask extends AsyncTask<String, Integer, Long>
         }
     }
 
+//    下面是通过 Handler 发送消息操作主线程
+//    private void sendResponse(Handler handler, String response, int what) {
+//        if (handler != null) {
+//            if (null == response) {
+//                handler.sendEmptyMessage(what);
+//            } else {
+//                Message msg = new Message();
+//                Bundle bundle = new Bundle();
+//                bundle.putString(RESPONSE, response);
+//                msg.setData(bundle);
+//                msg.what = what;
+//                handler.sendMessage(msg);
+//            }
+//            mContext = null;
+//        }
+//    }
+
 }
