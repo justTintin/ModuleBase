@@ -26,67 +26,89 @@ import java.net.URL;
 public class CommonDownloadTask extends AsyncTask<String, Integer, Long>
 {
 
-    private static  final String TAG = CommonDownloadTask.class.getSimpleName();
+    private static final String TAG = CommonDownloadTask.class.getSimpleName();
+
     private Handler mHandler = null;
+
     private String mUrl = null;
+
     private int mWhat = 0;
 
     private Context mContext;
-    public CommonDownloadTask(Context context,Handler handler, String url, int what) {
 
-       mContext = context;
+    public CommonDownloadTask(Context context, Handler handler, String url,
+            int what)
+    {
+
+        mContext = context;
         mHandler = handler;
         mUrl = url;
         mWhat = what;
     }
 
-
     @Override
-    protected Long doInBackground(String... params) {
+    protected Long doInBackground(String... params)
+    {
         OutputStream output = null;
-        try {
-            URL url =  new URL(mUrl);
+        try
+        {
+            URL url = new URL(mUrl);
             // 创建一个HttpURLConnection连接
             HttpURLConnection urlConn = (HttpURLConnection) url.openConnection();
             InputStream input = urlConn.getInputStream();
             //文件夹
-            File dir =mContext.getExternalFilesDir(null);
-            if(!dir.exists())
+            File dir = mContext.getExternalFilesDir(null);
+            if (!dir.exists())
             {
                 dir.mkdir();
             }
             //本地文件
-            File file = new File(mContext.getExternalFilesDir(null).getPath() + params[0]);
-            if(!file.exists()){
+            File file = new File(mContext.getExternalFilesDir(null).getPath()
+                    + File.separator + params[0]);
+            if (!file.exists())
+            {
                 file.createNewFile();
                 //写入本地
                 output = new FileOutputStream(file);
-                byte buffer [] = new byte[1024];
+                byte buffer[] = new byte[1024];
                 int inputSize = -1;
-                while((inputSize = input.read(buffer)) != -1) {
+                while ((inputSize = input.read(buffer)) != -1)
+                {
                     output.write(buffer, 0, inputSize);
                 }
                 output.flush();
             }
 
-        } catch (MalformedURLException e) {
+        }
+        catch (MalformedURLException e)
+        {
             // TODO Auto-generated catch block
             e.printStackTrace();
-        } catch (IOException e) {
+        }
+        catch (IOException e)
+        {
             // TODO Auto-generated catch block
             e.printStackTrace();
-        } finally{
-            try{
+        }
+        finally
+        {
+            try
+            {
                 output.close();
             }
-            catch(Exception e){
+            catch (Exception e)
+            {
                 e.printStackTrace();
             }
         }
         //发送处理
-        if (mHandler != null) {
-            sendResponse(mHandler, mContext.getExternalFilesDir(null).getPath() + params[0], mWhat);
-        } else {
+        if (mHandler != null)
+        {
+            sendResponse(mHandler, mContext.getExternalFilesDir(null).getPath()
+                    + params[0], mWhat);
+        }
+        else
+        {
             Log.w(TAG, "mHandler == null, what = " + mWhat);
         }
         return null;
@@ -97,10 +119,14 @@ public class CommonDownloadTask extends AsyncTask<String, Integer, Long>
      */
     private void sendResponse(Handler handler, String response, int what)
     {
-        if (handler != null) {
-            if (null == response) {
+        if (handler != null)
+        {
+            if (null == response)
+            {
                 handler.sendEmptyMessage(what);
-            } else {
+            }
+            else
+            {
                 Message msg = new Message();
                 Bundle bundle = new Bundle();
                 bundle.putString("response", response);
@@ -112,21 +138,21 @@ public class CommonDownloadTask extends AsyncTask<String, Integer, Long>
         }
     }
 
-//    下面是通过 Handler 发送消息操作主线程
-//    private void sendResponse(Handler handler, String response, int what) {
-//        if (handler != null) {
-//            if (null == response) {
-//                handler.sendEmptyMessage(what);
-//            } else {
-//                Message msg = new Message();
-//                Bundle bundle = new Bundle();
-//                bundle.putString(RESPONSE, response);
-//                msg.setData(bundle);
-//                msg.what = what;
-//                handler.sendMessage(msg);
-//            }
-//            mContext = null;
-//        }
-//    }
+    //    下面给大家看一下调用方法
+    //    @SuppressLint("NewApi")
+    //    public void getBillVoices(Handler mHandler, int what, String mFilePath,
+    //                              String fileName)
+    //    {
+    //        CommonDownloadTask task = new CommonDownloadTask(mHandler,
+    //                GlobalVariable.SERVER_SITE + mFilePath, what);
+    //        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB)
+    //        {
+    //            task.execute(fileName);
+    //        }
+    //        else
+    //        {
+    //            task.executeOnExecutor(AsyncTask.SERIAL_EXECUTOR, fileName);
+    //        }
+    //    }
 
 }
