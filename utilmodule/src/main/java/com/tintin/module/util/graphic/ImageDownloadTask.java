@@ -27,10 +27,12 @@ public class ImageDownloadTask extends AsyncTask<String, Void, Bitmap>
     {
         this.imageView = imageView;
     }
+
     public ImageDownloadTask(Bitmap imageView)
     {
         this.bitmap = imageView;
     }
+
     protected Bitmap doInBackground(String... addresses)
     {
         Bitmap bitmap = null;
