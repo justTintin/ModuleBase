@@ -68,15 +68,33 @@ public class CommonDownloadTask extends AsyncTask<String, Integer, Long>
             if (!file.exists())
             {
                 file.createNewFile();
-                //写入本地
-                output = new FileOutputStream(file);
-                byte buffer[] = new byte[1024];
-                int inputSize = -1;
-                while ((inputSize = input.read(buffer)) != -1)
-                {
-                    output.write(buffer, 0, inputSize);
-                }
-                output.flush();
+
+            }
+            else
+            {
+                file.delete();
+                file.createNewFile();
+            }
+            //写入本地
+            output = new FileOutputStream(file);
+            byte buffer[] = new byte[1024];
+            int inputSize = -1;
+            while ((inputSize = input.read(buffer)) != -1)
+            {
+                output.write(buffer, 0, inputSize);
+            }
+            output.flush();
+            //发送处理
+            if (mHandler != null)
+            {
+                sendResponse(mHandler, mContext.getExternalFilesDir(null)
+                        .getPath() + params[0], mWhat);
+            }
+            else
+            {
+                Log.w(TAG, "mHandler == null, what = " + mWhat);
+                sendResponse(mHandler, mContext.getExternalFilesDir(null)
+                        .getPath() + params[0], mWhat + 1);
             }
 
         }
@@ -84,11 +102,15 @@ public class CommonDownloadTask extends AsyncTask<String, Integer, Long>
         {
             // TODO Auto-generated catch block
             e.printStackTrace();
+            sendResponse(mHandler, mContext.getExternalFilesDir(null).getPath()
+                    + params[0], mWhat + 2);
         }
         catch (IOException e)
         {
             // TODO Auto-generated catch block
             e.printStackTrace();
+            sendResponse(mHandler, mContext.getExternalFilesDir(null).getPath()
+                    + params[0], mWhat + 3);
         }
         finally
         {
@@ -101,16 +123,7 @@ public class CommonDownloadTask extends AsyncTask<String, Integer, Long>
                 e.printStackTrace();
             }
         }
-        //发送处理
-        if (mHandler != null)
-        {
-            sendResponse(mHandler, mContext.getExternalFilesDir(null).getPath()
-                    + params[0], mWhat);
-        }
-        else
-        {
-            Log.w(TAG, "mHandler == null, what = " + mWhat);
-        }
+
         return null;
     }
 
