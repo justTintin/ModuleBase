@@ -13,10 +13,13 @@ import com.tintin.module.util.Logger;
 import com.tintin.module.util.ToastUtil;
 import com.tintin.module.util.file.CommonDownloadTask;
 
-public class MainActivity extends AppCompatActivity
+/**
+ * 工具箱下载文件
+ */
+public class DownloadActivity extends AppCompatActivity
 {
 
-    private static final String TAG = MainActivity.class.getSimpleName();
+    private static final String TAG = DownloadActivity.class.getSimpleName();
 
     private String mFileUrl = "";
     private static final int MSG_DOWN = 1000;
@@ -45,7 +48,7 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_download);
         //
         getBillVoices(mHandler, MSG_DOWN, mFileUrl, "xx.txt");
 

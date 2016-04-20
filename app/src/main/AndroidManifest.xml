@@ -2,7 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.tintin.module.app">
 
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,22 +11,21 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name="com.tintin.module.activity.BaseActivity" />
-        <activity android:name="com.tintin.module.activity.CircleProcessViewActivity">
+        <activity android:name="com.tintin.module.activity.CircleProcessViewActivity" />
+        <activity android:name="com.tintin.module.activity.CircleSeekBarUnionActivity" />
+        <activity android:name="com.tintin.module.activity.DownloadActivity" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
 
-        </activity>
-        <activity android:name="com.tintin.module.activity.CircleSeekBarUnionActivity">
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
 
-        </activity>
-        <activity android:name="com.tintin.module.activity.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity
+            android:name="com.tintin.module.activity.ScrollingActivity"
+            android:label="@string/title_activity_scrolling"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-
-            </intent-filter>
-
-
-        </activity>
     </application>
 
 </manifest>
