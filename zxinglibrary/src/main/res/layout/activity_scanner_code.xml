@@ -21,7 +21,7 @@
 
         <!-- 存放扫描窗口界面 -->
 
-        <com.doron.xueche.library.zxing.view.ViewfinderView
+        <com.tintin.module.zxinglibrary.view.ViewfinderView
             android:id="@+id/view_finder"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent" />
