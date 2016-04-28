@@ -22,6 +22,7 @@ repositories {
     maven {
         url 'https://dl.bintray.com/aurelhubert/maven/'
     }
+    maven { url "https://raw.github.com/bmob/bmob-android-sdk/master" }
 }
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
@@ -33,4 +34,5 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.3.0'
     compile 'com.android.support:design:23.3.0'
     compile 'com.android.support:support-v4:23.3.0'
+    compile 'cn.bmob.android:bmob-sdk:3.4.6'
 }
