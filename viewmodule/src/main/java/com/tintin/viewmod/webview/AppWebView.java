@@ -79,7 +79,6 @@ public class AppWebView extends WebView
         //设置支持缩放
         mWebSettings.setBuiltInZoomControls(true);
         mWebSettings.setUseWideViewPort(true);
-        mWebSettings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
         mWebSettings.setLoadWithOverviewMode(true);
         mWebSettings.setDisplayZoomControls(false);
         mWebSettings.setBlockNetworkImage(true);
