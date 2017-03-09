@@ -3,6 +3,7 @@ package com.tintin.module.util.device;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.PowerManager;
 import android.telephony.TelephonyManager;
 import android.widget.Toast;
@@ -11,32 +12,36 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
+import static android.content.Context.TELEPHONY_SERVICE;
+
 /*
-* [设备相关工具类 ]
-* [功能详细描述]
-* @author Administrator
-* @version [DoronApp, 2015/12/14] 
-*/
+ * [设备相关工具类 ]
+ * [功能详细描述]
+ * @author Administrator
+ * @version [DoronApp, 2015/12/14] 
+ */
 public class DeviceUtils
 {
-
+    
     private static PowerManager.WakeLock sWakeLock;
-
+    
     /**
      * 获取机器的id
+     * 
      * @param context
      * @return
      */
     public static String getDeviceId(Context context)
     {
         String deviceId = "";
-        TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
+        TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(TELEPHONY_SERVICE);
         deviceId = telephonyManager.getDeviceId();
         return deviceId;
     }
-
+    
     /**
      * 格式化手机号号码
+     * 
      * @param phoneNum
      * @return
      */
@@ -65,7 +70,7 @@ public class DeviceUtils
         }
         return formatNo;
     }
-
+    
     public static boolean checkPhoneNumber(String phoneNum)
     {
         if (phoneNum.startsWith("+86") || phoneNum.startsWith("086"))
@@ -93,9 +98,10 @@ public class DeviceUtils
             return true;
         }
     }
-
+    
     /**
      * 打电话功能，需要权限
+     * 
      * @param context
      * @param phnum
      */
@@ -107,9 +113,10 @@ public class DeviceUtils
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
     }
-
+    
     /**
      * [判断是否为移动号码]<BR>
+     * 
      * @param phoneNum 传入的手机号码
      * @return 是否是移动的手机号
      */
@@ -124,7 +131,7 @@ public class DeviceUtils
             return isPrefixNumber(phoneNum);
         }
     }
-
+    
     private static boolean isPrefixNumber(String prefixNumber)
     {
         if (prefixNumber.startsWith("+86") || prefixNumber.startsWith("086"))
@@ -146,9 +153,10 @@ public class DeviceUtils
         }
         return false;
     }
-
+    
     /**
      * 保持屏幕唤醒
+     * 
      * @param context 上下文
      */
     public static void acquireWakeLock(Context context)
@@ -161,7 +169,7 @@ public class DeviceUtils
             sWakeLock.acquire();
         }
     }
-
+    
     /**
      * 解除屏幕唤醒 <BR>
      */
@@ -173,11 +181,11 @@ public class DeviceUtils
             sWakeLock = null;
         }
     }
-
+    
     private static long lastClickTime;
-
+    
     private static long lastShowTime;
-
+    
     public static boolean isFastDoubleClick()
     {
         long time = System.currentTimeMillis();
@@ -189,7 +197,7 @@ public class DeviceUtils
         lastClickTime = time;
         return false;
     }
-
+    
     public static void notFastShow(Context context)
     {
         long time = System.currentTimeMillis();
@@ -200,9 +208,9 @@ public class DeviceUtils
                     .show();
         }
         lastShowTime = time;
-
+        
     }
-
+    
     public static String[] getCpuInfo()
     {
         String str1 = "/proc/cpuinfo";
@@ -229,5 +237,40 @@ public class DeviceUtils
         }
         return cpuInfo;
     }
-
+    
+    public static String getOSVersion()
+    {
+        return android.os.Build.VERSION.RELEASE;
+    }
+    
+    public static String getBrand()
+    {
+        
+        return android.os.Build.BRAND;
+    }
+    
+    /**
+     *
+     手机型号
+     */
+    public static String getModel()
+    {
+        
+        return android.os.Build.MODEL;
+    }
+    
+    private TelephonyManager getDeviceInfo(Context context)
+    {
+        TelephonyManager mTm = (TelephonyManager) context.getSystemService(TELEPHONY_SERVICE);
+        String imei = mTm.getDeviceId();
+        String imsi = mTm.getSubscriberId();
+        String numer = mTm.getLine1Number(); // 手机号码，有的可得，有的不可得
+        return mTm;
+    }
+    
+    // 检查版本
+    public static boolean supportsViewElevation()
+    {
+        return Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP;
+    }
 }

@@ -3,7 +3,9 @@ package com.tintin.module.util.device;
 /**
  * Created by Administrator on 2015/12/2.
  */
+
 import android.content.Context;
+import android.util.DisplayMetrics;
 import android.util.TypedValue;
 
 /**
@@ -16,10 +18,10 @@ public class DensityUtils
 {
     private DensityUtils()
     {
-		/* cannot be instantiated */
+        /* cannot be instantiated */
         throw new UnsupportedOperationException("cannot be instantiated");
     }
-
+    
     /**
      * dp转px
      *
@@ -30,9 +32,10 @@ public class DensityUtils
     public static int dp2px(Context context, float dpVal)
     {
         return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
-                dpVal, context.getResources().getDisplayMetrics());
+                dpVal,
+                context.getResources().getDisplayMetrics());
     }
-
+    
     /**
      * sp转px
      *
@@ -43,9 +46,10 @@ public class DensityUtils
     public static int sp2px(Context context, float spVal)
     {
         return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP,
-                spVal, context.getResources().getDisplayMetrics());
+                spVal,
+                context.getResources().getDisplayMetrics());
     }
-
+    
     /**
      * px转dp
      *
@@ -58,7 +62,7 @@ public class DensityUtils
         final float scale = context.getResources().getDisplayMetrics().density;
         return (pxVal / scale);
     }
-
+    
     /**
      * px转sp
      *
@@ -70,5 +74,13 @@ public class DensityUtils
     {
         return (pxVal / context.getResources().getDisplayMetrics().scaledDensity);
     }
-
+    
+    public static String getReselution(Context context)
+    {
+        
+        DisplayMetrics dm = context.getResources().getDisplayMetrics();
+        float xdpi = dm.xdpi;
+        float ydpi = dm.ydpi;
+        return xdpi + "x" + ydpi;
+    }
 }

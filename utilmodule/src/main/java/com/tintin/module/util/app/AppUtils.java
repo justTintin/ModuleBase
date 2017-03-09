@@ -4,9 +4,6 @@ package com.tintin.module.util.app;
  * Created by Administrator on 2015/12/2.
  */
 
-import java.io.File;
-import java.util.List;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
@@ -14,6 +11,9 @@ import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.net.Uri;
 import android.util.Log;
+
+import java.io.File;
+import java.util.List;
 
 /**
  * 跟App相关的辅助类
@@ -24,14 +24,14 @@ import android.util.Log;
 public class AppUtils
 {
     private static final String TAG = AppUtils.class.getSimpleName();
-
+    
     private AppUtils()
     {
         /* cannot be instantiated */
         throw new UnsupportedOperationException("cannot be instantiated");
-
+        
     }
-
+    
     /**
      * 获取应用程序名称
      */
@@ -51,7 +51,7 @@ public class AppUtils
         }
         return null;
     }
-
+    
     /**
      * [获取应用程序版本名称信息]
      *
@@ -66,7 +66,7 @@ public class AppUtils
             PackageInfo packageInfo = packageManager.getPackageInfo(context.getPackageName(),
                     0);
             return packageInfo.versionName;
-
+            
         }
         catch (NameNotFoundException e)
         {
@@ -74,7 +74,7 @@ public class AppUtils
         }
         return null;
     }
-
+    
     public static boolean isWeixinAvilible(Context context)
     {
         final PackageManager packageManager = context.getPackageManager();// 获取packagemanager
@@ -90,16 +90,16 @@ public class AppUtils
                 }
             }
         }
-
+        
         return false;
     }
-
+    
     /**
      * 判断qq是否可用
-    *
-            * @param context
-    * @return
-            */
+     *
+     * @param context
+     * @return
+     */
     public static boolean isQQClientAvailable(Context context)
     {
         final PackageManager packageManager = context.getPackageManager();
@@ -117,7 +117,7 @@ public class AppUtils
         }
         return false;
     }
-
+    
     /**
      * 判断qq是否可用
      *
@@ -141,7 +141,7 @@ public class AppUtils
         }
         return false;
     }
-
+    
     public static boolean installApk(Context context, String filePath)
     {
         Intent i = new Intent(Intent.ACTION_VIEW);
@@ -159,11 +159,12 @@ public class AppUtils
             Log.e(TAG, "" + file.isFile() + file.exists() + file.length());
             return false;
         }
-
+        
     }
-
+    
     /**
      * 取得包信息
+     * 
      * @param context
      * @return
      */
@@ -187,7 +188,34 @@ public class AppUtils
         }
         return info;
     }
+    
+    /**
+     * 重启整个APP
+     * 
+     * @param context
+     * @param Delayed 延迟多少毫秒
+     */
+    public static void restartAPP(Context context, long Delayed)
+    {
 
-
-
+        Intent i = context.getPackageManager()
+                .getLaunchIntentForPackage( context.getPackageName() );
+        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        context.startActivity(i);
+        /** 开启一个新的服务，用来重启本APP */
+//        Intent intent1 = new Intent(context, killSelfService.class);
+//        intent1.putExtra("PackageName", context.getPackageName());
+//        intent1.putExtra("Delayed", Delayed);
+//        context.startService(intent1);
+//
+//        /** 杀死整个进程 **/
+//        android.os.Process.killProcess(android.os.Process.myPid());
+    }
+    
+    /*** 重启整个APP */
+    public static void restartAPP(Context context)
+    {
+        restartAPP(context, 2000);
+    }
+    
 }
