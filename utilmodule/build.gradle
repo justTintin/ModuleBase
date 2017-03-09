@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-
+apply plugin : 'maven'
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.2"
@@ -30,4 +30,17 @@ dependencies {
             [group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.4.1']
     )
     compile files('libs/commons-codec-1.8.jar')
+}
+
+
+uploadArchives{
+    repositories.mavenDeployer {
+        def mavenRepositoryPath = file(getProperty('aar.utilmodule'))
+        repository(url: "file://${mavenRepositoryPath.absolutePath}")
+        pom.project{
+            groupId "com.tintin.module.utilmodule"
+            artifactId "utilmodule"
+            version 1.0
+        }
+    }
 }
