@@ -29,11 +29,11 @@ dependencies {
 }
 uploadArchives{
     repositories.mavenDeployer {
-        def mavenRepositoryPath = file(getProperty('aar.viewmodule'))
+        def mavenRepositoryPath = file(getProperty('aar.view'))
         repository(url: "file://${mavenRepositoryPath.absolutePath}")
         pom.project{
-            groupId "com.tintin.module.viewmodule"
-            artifactId "viewmodule"
+            groupId "me.tintin.module.view"
+            artifactId "view"
             version 1.0
         }
     }

@@ -17,7 +17,7 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.tintin.module.viewmodule.R;
+import me.tintin.module.view.R;
 
 /**
  * Created by gaopengfei on 15/11/15.

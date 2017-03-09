@@ -27,7 +27,7 @@ import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 
-import com.tintin.module.viewmodule.R;
+import me.tintin.module.view.R;
 
 public class SlidingMenu extends RelativeLayout {
 

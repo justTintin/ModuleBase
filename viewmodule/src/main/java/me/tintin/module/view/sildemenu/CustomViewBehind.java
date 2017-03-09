@@ -13,7 +13,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.tintin.module.viewmodule.R;
+import me.tintin.module.view.R;
 
 public class CustomViewBehind extends ViewGroup {
 

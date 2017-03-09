@@ -19,7 +19,7 @@ import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.view.View;
 
-import com.tintin.module.viewmodule.R;
+import me.tintin.module.view.R;
 
 /**
  * Created by alive on 2016/1/20.

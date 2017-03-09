@@ -35,11 +35,11 @@ dependencies {
 
 uploadArchives{
     repositories.mavenDeployer {
-        def mavenRepositoryPath = file(getProperty('aar.utilmodule'))
+        def mavenRepositoryPath = file(getProperty('aar.util'))
         repository(url: "file://${mavenRepositoryPath.absolutePath}")
         pom.project{
-            groupId "com.tintin.module.utilmodule"
-            artifactId "utilmodule"
+            groupId "me.tintin.module.util"
+            artifactId "util"
             version 1.0
         }
     }
