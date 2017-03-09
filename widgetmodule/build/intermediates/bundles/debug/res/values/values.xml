@@ -21,4 +21,12 @@
     <dimen name="def_wheel_width">32dp</dimen>
     <item name="selected_view" type="id"/>
     <string name="app_name">ZXingLibrary</string>
+    <style name="BaseDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
 </resources>

@@ -33,7 +33,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import me.tintin.module.zxing.zxinglibrary.R;
+import me.tintin.module.zxing.R;
 import me.tintin.module.zxing.zxinglibrary.android.DecodeFormatManager;
 import me.tintin.module.zxing.zxinglibrary.camera.CameraManager;
 import me.tintin.module.zxing.zxinglibrary.view.ViewfinderResultPointCallback;

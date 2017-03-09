@@ -16,9 +16,6 @@
 
 package me.tintin.module.zxing.zxinglibrary.view;
 
-import java.util.Collection;
-import java.util.HashSet;
-
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
@@ -30,7 +27,11 @@ import android.util.AttributeSet;
 import android.view.View;
 
 import com.google.zxing.ResultPoint;
-import me.tintin.module.zxing.zxinglibrary.R;
+
+import java.util.Collection;
+import java.util.HashSet;
+
+import me.tintin.module.zxing.R;
 import me.tintin.module.zxing.zxinglibrary.camera.CameraManager;
 
 /** 

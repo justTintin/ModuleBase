@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.2"
+    buildToolsVersion "25.0.0"
 
     defaultConfig {
         applicationId "com.tintin.module.app"
@@ -18,16 +18,9 @@ android {
         }
     }
 }
-repositories {
-    maven {
-        url 'https://dl.bintray.com/aurelhubert/maven/'
-    }
-    maven { url "https://raw.github.com/bmob/bmob-android-sdk/master" }
-}
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
-    compile files('libs/afinal_0.5.1_bin.jar')
     compile project(':networkmodule')
     compile project(':widgetmodule')
     compile project(':utilmodule')
@@ -35,4 +28,6 @@ dependencies {
     compile 'com.android.support:design:23.3.0'
     compile 'com.android.support:support-v4:23.3.0'
     compile 'cn.bmob.android:bmob-sdk:3.4.6'
+    compile 'com.squareup.okhttp3:okhttp:3.5.0'
+    compile 'cn.finalteam:okhttpfinal:2.0.7'
 }

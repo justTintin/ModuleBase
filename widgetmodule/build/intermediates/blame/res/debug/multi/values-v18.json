@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "D:\\dingningning003829\\AndroidstudioProjects\\ModuleBase\\widgetmodule\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v18\\values-v18.xml",
+        "outputFile": "D:\\Project\\Github_Project\\ModuleBase\\widgetmodule\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v18\\values-v18.xml",
         "map": [
             {
                 "to": {
@@ -11,13 +11,13 @@
                     "endOffset": 99
                 },
                 "from": {
-                    "file": "D:\\dingningning003829\\AndroidstudioProjects\\ModuleBase\\widgetmodule\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-v18\\values-v18.xml",
+                    "file": "C:\\Users\\alive\\.android\\build-cache\\22227fc5ca7ec0a428ecb7582d7ee023fd425768\\output\\res\\values-v18\\values-v18.xml",
                     "position": {
-                        "startLine": 4,
+                        "startLine": 2,
                         "startColumn": 4,
-                        "startOffset": 229,
+                        "startOffset": 55,
                         "endColumn": 48,
-                        "endOffset": 273
+                        "endOffset": 99
                     }
                 }
             }
