@@ -11,7 +11,7 @@
     tools:context="com.tintin.module.activity.CircleProcessViewActivity">
 
 
-    <me.tintin.module.view.circle.CircleProcessView
+    <me.tintin.module.widget.circle.CircleProcessView
         android:id="@+id/circleProcessView"
         android:layout_width="300dp"
         android:layout_height="300dp"

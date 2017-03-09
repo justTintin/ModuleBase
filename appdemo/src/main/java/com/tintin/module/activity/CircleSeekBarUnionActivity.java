@@ -8,7 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import com.tintin.module.app.R;
-import me.tintin.module.view.circle.CircleSeekBar;
+import me.tintin.module.widget.circle.CircleSeekBar;
 
 public class CircleSeekBarUnionActivity extends AppCompatActivity {
     public static final String TAG = CircleSeekBarUnionActivity.class.getSimpleName();

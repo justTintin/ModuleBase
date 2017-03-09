@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context="com.tintin.module.activity.CircleSeekBarUnionActivity">
 
-    <me.tintin.module.view.circle.CircleSeekBar
+    <me.tintin.module.widget.circle.CircleSeekBar
         android:id="@+id/seek_minute"
         android:layout_width="300dp"
         android:layout_height="300dp"
@@ -16,7 +16,7 @@
         app:wheel_unreached_width="32dp" />
 
     <!--     300-32-32 = 236   -->
-    <me.tintin.module.view.circle.CircleSeekBar
+    <me.tintin.module.widget.circle.CircleSeekBar
         android:id="@+id/seek_hour"
         android:layout_width="236dp"
         android:layout_height="236dp"

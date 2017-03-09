@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.tintin.module.app.R;
-import me.tintin.module.view.circle.CircleProcessView;
+import me.tintin.module.widget.circle.CircleProcessView;
 
 public class CircleProcessViewActivity extends AppCompatActivity
 {

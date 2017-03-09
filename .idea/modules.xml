@@ -11,7 +11,7 @@
       <module fileurl="file://$PROJECT_DIR$/paymodule/paymodule.iml" filepath="$PROJECT_DIR$/paymodule/paymodule.iml" />
       <module fileurl="file://$PROJECT_DIR$/sharesdklibrary/sharesdklibrary.iml" filepath="$PROJECT_DIR$/sharesdklibrary/sharesdklibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/utilmodule/utilmodule.iml" filepath="$PROJECT_DIR$/utilmodule/utilmodule.iml" />
-      <module fileurl="file://$PROJECT_DIR$/viewmodule/viewmodule.iml" filepath="$PROJECT_DIR$/viewmodule/viewmodule.iml" />
+      <module fileurl="file://$PROJECT_DIR$/widgetmodule/widgetmodule.iml" filepath="$PROJECT_DIR$/widgetmodule/widgetmodule.iml" />
       <module fileurl="file://$PROJECT_DIR$/zxinglibrary/zxinglibrary.iml" filepath="$PROJECT_DIR$/zxinglibrary/zxinglibrary.iml" />
     </modules>
   </component>

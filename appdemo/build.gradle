@@ -29,7 +29,7 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile files('libs/afinal_0.5.1_bin.jar')
     compile project(':networkmodule')
-    compile project(':viewmodule')
+    compile project(':widgetmodule')
     compile project(':utilmodule')
     compile 'com.android.support:appcompat-v7:23.3.0'
     compile 'com.android.support:design:23.3.0'
