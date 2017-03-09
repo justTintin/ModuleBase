@@ -5,7 +5,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- * To work on unit tests, switch the Test Artifact in the Build Variants com.tintin.module.zxinglibrary.view.
+ * To work on unit tests, switch the Test Artifact in the Build Variants me.tintin.module.zxing.zxinglibrary.view.
  */
 public class ExampleUnitTest {
     @Test

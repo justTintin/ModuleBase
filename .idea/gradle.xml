@@ -3,32 +3,25 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
-        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="distributionType" value="LOCAL" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleHome" value="D:\Program Files\Android\Android Studio\gradle\gradle-2.10" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/appdemo" />
             <option value="$PROJECT_DIR$/datamodule" />
             <option value="$PROJECT_DIR$/domainmodule" />
             <option value="$PROJECT_DIR$/loginmodule" />
             <option value="$PROJECT_DIR$/networkmodule" />
+            <option value="$PROJECT_DIR$/paymodule" />
+            <option value="$PROJECT_DIR$/sharesdklibrary" />
+            <option value="$PROJECT_DIR$/utilmodule" />
             <option value="$PROJECT_DIR$/viewmodule" />
             <option value="$PROJECT_DIR$/zxinglibrary" />
           </set>
         </option>
-        <option name="myModules">
-          <set>
-            <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/datamodule" />
-            <option value="$PROJECT_DIR$/domainmodule" />
-            <option value="$PROJECT_DIR$/loginmodule" />
-            <option value="$PROJECT_DIR$/networkmodule" />
-            <option value="$PROJECT_DIR$/viewmodule" />
-            <option value="$PROJECT_DIR$/zxinglibrary" />
-          </set>
-        </option>
+        <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>
   </component>

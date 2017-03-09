@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.tintin.module.datamodule">
+    package="me.tintin.module.data">
 
     <application
         android:allowBackup="true"

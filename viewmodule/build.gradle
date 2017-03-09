@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-
+apply plugin : 'maven'
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.2"
@@ -26,4 +26,15 @@ dependencies {
     compile 'com.android.support:support-v4:23.1.1'
     //控件实现波纹效果
     compile 'com.balysv:material-ripple:1.0.2'
+}
+uploadArchives{
+    repositories.mavenDeployer {
+        def mavenRepositoryPath = file(getProperty('aar.viewmodule'))
+        repository(url: "file://${mavenRepositoryPath.absolutePath}")
+        pom.project{
+            groupId "com.tintin.module.viewmodule"
+            artifactId "viewmodule"
+            version 1.0
+        }
+    }
 }

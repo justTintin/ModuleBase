@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.tintin.module.pay">
+    package="me.tintin.module.pay">
 
     <application
         android:allowBackup="true"

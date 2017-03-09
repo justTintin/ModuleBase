@@ -2,10 +2,13 @@
 <project version="4">
   <component name="EclipseCodeFormatter">
     <option name="defaultSettings" value="true" />
+    <option name="eclipseVersion" value="ECLIPSE_44" />
     <option name="formatter" value="ECLIPSE" />
-    <option name="id" value="1449044994578" />
+    <option name="id" value="1441619554526" />
+    <option name="importOrdering" value="ECLIPSE_44" />
     <option name="name" value="default" />
-    <option name="pathToConfigFileJava" value="D:/android_software/App_formatter.xml" />
+    <option name="optimizeImports" value="false" />
+    <option name="pathToConfigFileJava" value="$PROJECT_DIR$/../DSMClient_HW_Studio/config/SoftClient_CodeFormatterTemplates_V1.0.xml" />
     <option name="selectedJavaProfile" value="CodeFormatter" />
     <option name="useOldEclipseJavaFormatter" value="true" />
   </component>
