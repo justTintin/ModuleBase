@@ -1,42 +1,42 @@
 [
     {
-        "merged": "D:\\dingningning003829\\AndroidstudioProjects\\ModuleBase\\widgetmodule\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
-        "source": "D:\\dingningning003829\\AndroidstudioProjects\\ModuleBase\\widgetmodule\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_slide_out_bottom.xml"
+        "merged": "D:\\Project\\Github_Project\\ModuleBase\\widgetmodule\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
+        "source": "C:\\Users\\alive\\.android\\build-cache\\22227fc5ca7ec0a428ecb7582d7ee023fd425768\\output\\res\\anim\\abc_slide_in_bottom.xml"
     },
     {
-        "merged": "D:\\dingningning003829\\AndroidstudioProjects\\ModuleBase\\widgetmodule\\build\\intermediates\\res\\merged\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
-        "source": "D:\\dingningning003829\\AndroidstudioProjects\\ModuleBase\\widgetmodule\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
+        "merged": "D:\\Project\\Github_Project\\ModuleBase\\widgetmodule\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_in.xml",
+        "source": "C:\\Users\\alive\\.android\\build-cache\\22227fc5ca7ec0a428ecb7582d7ee023fd425768\\output\\res\\anim\\abc_fade_in.xml"
     },
     {
-        "merged": "D:\\dingningning003829\\AndroidstudioProjects\\ModuleBase\\widgetmodule\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
-        "source": "D:\\dingningning003829\\AndroidstudioProjects\\ModuleBase\\widgetmodule\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_fade_out.xml"
+        "merged": "D:\\Project\\Github_Project\\ModuleBase\\widgetmodule\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",
+        "source": "C:\\Users\\alive\\.android\\build-cache\\22227fc5ca7ec0a428ecb7582d7ee023fd425768\\output\\res\\anim\\abc_popup_exit.xml"
     },
     {
-        "merged": "D:\\dingningning003829\\AndroidstudioProjects\\ModuleBase\\widgetmodule\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
-        "source": "D:\\dingningning003829\\AndroidstudioProjects\\ModuleBase\\widgetmodule\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_slide_out_top.xml"
+        "merged": "D:\\Project\\Github_Project\\ModuleBase\\widgetmodule\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
+        "source": "C:\\Users\\alive\\.android\\build-cache\\22227fc5ca7ec0a428ecb7582d7ee023fd425768\\output\\res\\anim\\abc_popup_enter.xml"
     },
     {
-        "merged": "D:\\dingningning003829\\AndroidstudioProjects\\ModuleBase\\widgetmodule\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
-        "source": "D:\\dingningning003829\\AndroidstudioProjects\\ModuleBase\\widgetmodule\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_popup_enter.xml"
+        "merged": "D:\\Project\\Github_Project\\ModuleBase\\widgetmodule\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
+        "source": "C:\\Users\\alive\\.android\\build-cache\\22227fc5ca7ec0a428ecb7582d7ee023fd425768\\output\\res\\anim\\abc_slide_out_bottom.xml"
     },
     {
-        "merged": "D:\\dingningning003829\\AndroidstudioProjects\\ModuleBase\\widgetmodule\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",
-        "source": "D:\\dingningning003829\\AndroidstudioProjects\\ModuleBase\\widgetmodule\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_popup_exit.xml"
+        "merged": "D:\\Project\\Github_Project\\ModuleBase\\widgetmodule\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
+        "source": "C:\\Users\\alive\\.android\\build-cache\\22227fc5ca7ec0a428ecb7582d7ee023fd425768\\output\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
     },
     {
-        "merged": "D:\\dingningning003829\\AndroidstudioProjects\\ModuleBase\\widgetmodule\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
-        "source": "D:\\dingningning003829\\AndroidstudioProjects\\ModuleBase\\widgetmodule\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
+        "merged": "D:\\Project\\Github_Project\\ModuleBase\\widgetmodule\\build\\intermediates\\res\\merged\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
+        "source": "C:\\Users\\alive\\.android\\build-cache\\22227fc5ca7ec0a428ecb7582d7ee023fd425768\\output\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
     },
     {
-        "merged": "D:\\dingningning003829\\AndroidstudioProjects\\ModuleBase\\widgetmodule\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
-        "source": "D:\\dingningning003829\\AndroidstudioProjects\\ModuleBase\\widgetmodule\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_slide_in_bottom.xml"
+        "merged": "D:\\Project\\Github_Project\\ModuleBase\\widgetmodule\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
+        "source": "C:\\Users\\alive\\.android\\build-cache\\22227fc5ca7ec0a428ecb7582d7ee023fd425768\\output\\res\\anim\\abc_slide_out_top.xml"
     },
     {
-        "merged": "D:\\dingningning003829\\AndroidstudioProjects\\ModuleBase\\widgetmodule\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_in.xml",
-        "source": "D:\\dingningning003829\\AndroidstudioProjects\\ModuleBase\\widgetmodule\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_fade_in.xml"
+        "merged": "D:\\Project\\Github_Project\\ModuleBase\\widgetmodule\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
+        "source": "C:\\Users\\alive\\.android\\build-cache\\22227fc5ca7ec0a428ecb7582d7ee023fd425768\\output\\res\\anim\\abc_fade_out.xml"
     },
     {
-        "merged": "D:\\dingningning003829\\AndroidstudioProjects\\ModuleBase\\widgetmodule\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
-        "source": "D:\\dingningning003829\\AndroidstudioProjects\\ModuleBase\\widgetmodule\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_slide_in_top.xml"
+        "merged": "D:\\Project\\Github_Project\\ModuleBase\\widgetmodule\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
+        "source": "C:\\Users\\alive\\.android\\build-cache\\22227fc5ca7ec0a428ecb7582d7ee023fd425768\\output\\res\\anim\\abc_slide_in_top.xml"
     }
 ]

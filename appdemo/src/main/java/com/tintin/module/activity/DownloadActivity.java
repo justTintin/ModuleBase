@@ -12,23 +12,19 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.squareup.okhttp.FormEncodingBuilder;
-import com.squareup.okhttp.MediaType;
-import com.squareup.okhttp.OkHttpClient;
-import com.squareup.okhttp.Request;
-import com.squareup.okhttp.RequestBody;
-import com.squareup.okhttp.Response;
 import com.tintin.module.app.R;
+
+import java.io.IOException;
+
 import me.tintin.module.util.Logger;
 import me.tintin.module.util.ToastUtil;
 import me.tintin.module.util.data.JacksonMapper;
 import me.tintin.module.util.file.CommonDownloadTask;
-
-import net.tsz.afinal.FinalHttp;
-import net.tsz.afinal.http.AjaxCallBack;
-import net.tsz.afinal.http.AjaxParams;
-
-import java.io.IOException;
+import okhttp3.MediaType;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 /**
  * 工具箱下载文件
@@ -126,9 +122,6 @@ public class DownloadActivity extends AppCompatActivity
 
     private String post(String url, String json) throws IOException {
         RequestBody body = RequestBody.create(JSON, json);
-        RequestBody formBody = new FormEncodingBuilder()
-                .add("appId", "5")
-                .build();
         Request request = new Request.Builder()
                 .url(url)
                 .post(body)
@@ -140,26 +133,6 @@ public class DownloadActivity extends AppCompatActivity
             throw new IOException("Unexpected code " + response);
         }
     }
-
-    private void getappByaFinal(){
-
-        AjaxParams params = new AjaxParams();
-        params.put("appId", "3");
-        FinalHttp fh = new FinalHttp();
-        fh.post(url, params, new AjaxCallBack(){
-            @Override
-            public void onLoading(long count, long current) {
-                mTv.setText(current+"/"+count);
-            }
-
-            @Override
-            public void onSuccess(Object o) {
-                super.onSuccess(o);
-                mTv.setText("repons"+o);
-            }
-        });
-    }
-
 
 
 }

@@ -2,15 +2,11 @@
 <project version="4">
   <component name="EclipseCodeFormatter">
     <option name="defaultSettings" value="true" />
-    <option name="eclipseVersion" value="ECLIPSE_44" />
     <option name="formatter" value="ECLIPSE" />
-    <option name="id" value="1441619554526" />
-    <option name="importOrdering" value="ECLIPSE_44" />
+    <option name="id" value="1475816568889" />
     <option name="name" value="default" />
-    <option name="optimizeImports" value="false" />
-    <option name="pathToConfigFileJava" value="$PROJECT_DIR$/../DSMClient_HW_Studio/config/SoftClient_CodeFormatterTemplates_V1.0.xml" />
+    <option name="pathToConfigFileJava" value="$PROJECT_DIR$/../../SoftClient_CodeFormatterTemplates_V1.0.xml" />
     <option name="selectedJavaProfile" value="CodeFormatter" />
-    <option name="useOldEclipseJavaFormatter" value="true" />
   </component>
   <component name="EntryPointsManager">
     <entry_points version="2.0" />

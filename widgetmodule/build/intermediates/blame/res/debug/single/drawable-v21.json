@@ -1,10 +1,14 @@
 [
     {
-        "merged": "D:\\dingningning003829\\AndroidstudioProjects\\ModuleBase\\widgetmodule\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_action_bar_item_background_material.xml",
-        "source": "D:\\dingningning003829\\AndroidstudioProjects\\ModuleBase\\widgetmodule\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable-v21\\abc_action_bar_item_background_material.xml"
+        "merged": "D:\\Project\\Github_Project\\ModuleBase\\widgetmodule\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_action_bar_item_background_material.xml",
+        "source": "C:\\Users\\alive\\.android\\build-cache\\22227fc5ca7ec0a428ecb7582d7ee023fd425768\\output\\res\\drawable-v21\\abc_action_bar_item_background_material.xml"
     },
     {
-        "merged": "D:\\dingningning003829\\AndroidstudioProjects\\ModuleBase\\widgetmodule\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_btn_colored_material.xml",
-        "source": "D:\\dingningning003829\\AndroidstudioProjects\\ModuleBase\\widgetmodule\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable-v21\\abc_btn_colored_material.xml"
+        "merged": "D:\\Project\\Github_Project\\ModuleBase\\widgetmodule\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_btn_colored_material.xml",
+        "source": "C:\\Users\\alive\\.android\\build-cache\\22227fc5ca7ec0a428ecb7582d7ee023fd425768\\output\\res\\drawable-v21\\abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "D:\\Project\\Github_Project\\ModuleBase\\widgetmodule\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_edit_text_material.xml",
+        "source": "C:\\Users\\alive\\.android\\build-cache\\22227fc5ca7ec0a428ecb7582d7ee023fd425768\\output\\res\\drawable-v21\\abc_edit_text_material.xml"
     }
 ]
