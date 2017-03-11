@@ -4,4 +4,5 @@
     <color name="def_reached_color">#FFD844</color>
     <color name="def_pointer_color">#FFFFFF</color>
     <color name="transparent">#00000000</color>
+    <color name="half_transparent">#50000000</color>
 </resources>
