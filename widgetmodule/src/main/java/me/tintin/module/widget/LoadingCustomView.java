@@ -66,11 +66,6 @@ public class LoadingCustomView extends View implements View.OnTouchListener
         mTextViewAlert.setText(message);
     }
     
-    public void dismiss()
-    {
-        mContainer.setVisibility(GONE);
-    }
-    
     public void setTvVisibility(boolean isShow)
     {
         if (isShow)
