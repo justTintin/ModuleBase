@@ -5,13 +5,14 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 /**
  * Created by n911917 on 2017/3/11.
  */
 
-public class LoadingCustomView extends View implements View.OnTouchListener
+public class LoadingCustomView extends RelativeLayout implements View.OnTouchListener
 {
     
     private View mContainer;

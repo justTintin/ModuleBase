@@ -39,6 +39,7 @@ dependencies {
     compile 'com.android.support:support-v4:23.1.1'
     //控件实现波纹效果
     compile 'com.balysv:material-ripple:1.0.2'
+    compile 'com.squareup.picasso:picasso:2.5.2'
 }
 uploadArchives{
     repositories.mavenDeployer {
