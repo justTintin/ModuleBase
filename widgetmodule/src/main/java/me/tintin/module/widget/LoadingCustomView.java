@@ -63,7 +63,7 @@ public class LoadingCustomView extends RelativeLayout implements View.OnTouchLis
     public void showLoadingResult(String message)
     {
         mContainer.setVisibility(VISIBLE);
-        mProgressBar.setVisibility(GONE);
+        mProgressBar.setVisibility(INVISIBLE);
         mTextViewAlert.setVisibility(VISIBLE);
         mTextViewAlert.setText(message);
     }

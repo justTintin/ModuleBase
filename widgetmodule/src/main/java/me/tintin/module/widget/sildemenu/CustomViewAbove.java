@@ -1,12 +1,13 @@
 package me.tintin.module.widget.sildemenu;
 
-import java.util.ArrayList;
-import java.util.List;
-import android.support.v4.view.*;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.os.Build;
+import android.support.v4.view.MotionEventCompat;
+import android.support.v4.view.VelocityTrackerCompat;
+import android.support.v4.view.ViewCompat;
+import android.support.v4.view.ViewConfigurationCompat;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.FocusFinder;
@@ -19,6 +20,9 @@ import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 import android.view.animation.Interpolator;
 import android.widget.Scroller;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class CustomViewAbove extends ViewGroup
 {
@@ -1274,16 +1278,17 @@ public class CustomViewAbove extends ViewGroup
                     {
                         // The focus finder had a bug handling FOCUS_FORWARD and FOCUS_BACKWARD
                         // before Android 3.0. Ignore the tab key on those devices.
-                        if (KeyEventCompat.hasNoModifiers(event))
-                        {
-                            handled = arrowScroll(FOCUS_FORWARD);
-                        }
-                        else if (KeyEventCompat.hasModifiers(event,
-                                KeyEvent.META_SHIFT_ON))
-                        {
-                            handled = arrowScroll(FOCUS_BACKWARD);
-                        }
+//                        if (KeyEventCompat.hasNoModifiers(event))
+//                        {
+//                            handled = arrowScroll(FOCUS_FORWARD);
+//                        }
+//                        else if (KeyEventCompat.hasModifiers(event,
+//                                KeyEvent.META_SHIFT_ON))
+//                        {
+//                            handled = arrowScroll(FOCUS_BACKWARD);
+//                        }
                     }
+                    handled = arrowScroll(FOCUS_FORWARD);
                 break;
             }
         }

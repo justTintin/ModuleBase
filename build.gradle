@@ -5,7 +5,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.0'
+        classpath 'com.android.tools.build:gradle:3.0.1'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -15,6 +15,7 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
+        google()
         maven {
             url 'https://dl.bintray.com/aurelhubert/maven/'
         }
@@ -25,4 +26,14 @@ allprojects {
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+ext {
+    // Sdk and tools
+    minSdkVersion = 15
+    targetSdkVersion = 27
+    compileSdkVersion = 27
+    buildToolsVersion = '27.0.0'
+
+    // App dependencies
+    supportLibraryVersion = '27.0.1'
 }
