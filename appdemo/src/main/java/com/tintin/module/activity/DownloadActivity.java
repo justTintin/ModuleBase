@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -18,7 +17,6 @@ import java.io.IOException;
 
 import me.tintin.module.util.Logger;
 import me.tintin.module.util.ToastUtil;
-import me.tintin.module.util.data.JacksonMapper;
 import me.tintin.module.util.file.CommonDownloadTask;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
@@ -71,7 +69,7 @@ public class DownloadActivity extends AppCompatActivity
         mBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getapp();
+
             }
         });
         mTv = (TextView) findViewById(R.id.textView2);
@@ -97,25 +95,7 @@ public class DownloadActivity extends AppCompatActivity
         }
     }
 
-    private void getapp(){
 
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    GameScore gameScore = new GameScore();
-                    gameScore.setAppId("2");
-
-                    String respon= post(url, JacksonMapper.getInstance().writeValueAsString(gameScore));
-                    Log.e(TAG,"respon=="+respon);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-
-            }
-        }).start();
-
-    }
 
     public static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
     OkHttpClient client = new OkHttpClient();
